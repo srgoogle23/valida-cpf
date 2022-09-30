@@ -5,10 +5,30 @@
 
 class ValidaCPFCNPJ
 {
+	protected:
+		static ValidaCPFCNPJ* validacpfcnpj;
+		ValidaCPFCNPJ();
 	public:
+		ValidaCPFCNPJ(ValidaCPFCNPJ &other) = delete;
+		void operator=(const ValidaCPFCNPJ &) = delete;
+		static ValidaCPFCNPJ *GetInstance();
 		static bool validaCPF(std::string cpf);
 		static bool validaCNPJ(std::string cnpj);
 };
+
+ValidaCPFCNPJ* ValidaCPFCNPJ::validacpfcnpj= nullptr;
+
+ValidaCPFCNPJ::ValidaCPFCNPJ()
+{
+}
+
+ValidaCPFCNPJ *ValidaCPFCNPJ::GetInstance()
+{
+    if(validacpfcnpj==nullptr){
+        validacpfcnpj = new ValidaCPFCNPJ();
+    }
+    return validacpfcnpj;
+}
 
 bool ValidaCPFCNPJ::validaCPF(std::string cpf)
 {
