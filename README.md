@@ -10,13 +10,13 @@ int main() {
 	std::string cpf = "12345678909";
 	std::string cnpj = "12345678901234";
 
-	if (ValidaCPF::valida(cpf)) {
+	if (ValidaCPFCNPJ::validaCPF(cpf)) {
 		std::cout << "CPF válido" << std::endl;
 	} else {
 		std::cout << "CPF inválido" << std::endl;
 	}
 
-	if (ValidaCNPJ::valida(cnpj)) {
+	if (ValidaCPFCNPJ::validaCNPJ(cnpj)) {
 		std::cout << "CNPJ válido" << std::endl;
 	} else {
 		std::cout << "CNPJ inválido" << std::endl;
